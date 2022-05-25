@@ -1,11 +1,13 @@
 {
   "name": "typedkoa",
   "version": "1.0.0",
-  "description": "Transform untyped Koa context into typed request object",
-  "main": "index.js",
+  "description": "Transform untyped Koa context into typed request",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "prepublish": "tsc"
   },
   "keywords": [],
   "author": {
