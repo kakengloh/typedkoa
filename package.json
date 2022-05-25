@@ -4,7 +4,8 @@
   "description": "Transform untyped Koa context into typed request object",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "keywords": [],
   "author": {
@@ -14,11 +15,22 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.3.1",
     "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.7",
+    "@types/koa-router": "^7.4.4",
+    "@types/mocha": "^9.1.1",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "chai": "^4.3.6",
     "eslint": "7.32.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.1.1",
+    "mocha": "^10.0.0",
     "prettier": "^2.6.2",
+    "supertest": "^6.2.3",
+    "ts-node": "^10.8.0",
     "typescript": "^4.7.2"
   },
   "dependencies": {

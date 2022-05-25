@@ -45,7 +45,7 @@ interface ResBody {
 }
 
 // Koa request handler / middleware
-const createStudent = (ctx, next): TypedKoa.Middleware<ResBody> => {
+const createStudent: TypedKoa.Middleware<ResBody> = (ctx, next) => {
   // request params, body and query are type inferred
   const { params, body, query } = TypedKoa.request<
     PathParams,
