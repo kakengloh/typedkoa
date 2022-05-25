@@ -39,10 +39,7 @@ interface ReqBody {
 
 interface QueryParams {}
 
-interface ResBody {
-  name: string;
-  age: number;
-}
+type ResBody = Student;
 
 // Koa request handler / middleware
 const createStudent: TypedKoa.Middleware<ResBody> = (ctx, next) => {
