@@ -1,4 +1,5 @@
 <div align="center">
+
 # TypedKoa
 
 Transform untyped Koa context into **typed request** for better Typescript support
