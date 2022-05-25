@@ -5,7 +5,7 @@
 Transform untyped Koa context into **typed request** for better Typescript support
 
 [Installation](#installation) •
-[Usage](#usage)
+[Example](#example)
 
 </div>
 
@@ -17,7 +17,7 @@ yarn add typedkoa # yarn
 pnpm i typedkoa   # pnpm
 ```
 
-## Usage
+## Example
 
 ```typescript
 import TypedKoa from "typedkoa";
