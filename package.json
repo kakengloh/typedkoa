@@ -15,6 +15,10 @@
     "email": "kakengloh@gmail.com",
     "url": "https://github.com/kakengloh"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kakengloh/typedkoa.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.3.1",
