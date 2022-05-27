@@ -2,11 +2,11 @@ import supertest from 'supertest';
 import Koa from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
-import TypedKoa from '.';
+import { Route } from '.';
 import { test } from 'mocha';
 import { expect } from 'chai';
 
-describe('TypedKoa', () => {
+describe('Route', () => {
   test('should return correct params, body and query', async () => {
     const app = new Koa();
     const router = new Router();
@@ -29,21 +29,9 @@ describe('TypedKoa', () => {
       query: QueryParams;
     }
 
-    const handler: TypedKoa.Middleware<ResBody> = async (ctx, next) => {
-      const { params, body, query } = TypedKoa.request<
-        PathParams,
-        ReqBody,
-        QueryParams
-      >(ctx);
-
-      ctx.body = {
-        params,
-        body,
-        query,
-      };
-
-      next();
-    };
+    const handler = Route<PathParams, ResBody, ReqBody, QueryParams>(
+      async (req) => req
+    );
 
     router.post('/:data', handler);
 

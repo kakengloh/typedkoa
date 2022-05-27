@@ -1,7 +1,7 @@
 {
   "name": "typedkoa",
   "version": "1.0.2",
-  "description": "Transform untyped Koa context into typed request",
+  "description": "Koa route handler with great Typescript support",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
@@ -11,9 +11,8 @@
   },
   "keywords": [
     "koa",
-    "typescript",
-    "request",
-    "context"
+    "type",
+    "typescript"
   ],
   "author": {
     "name": "KaKeng Loh",

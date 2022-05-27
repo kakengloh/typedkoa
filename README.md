@@ -2,7 +2,7 @@
 
 # TypedKoa
 
-Transform untyped Koa context into **typed request** for better Typescript support
+Koa route handler with great Typescript support
 
 [Installation](#installation) •
 [Example](#example)
@@ -20,7 +20,7 @@ pnpm i typedkoa   # pnpm
 ## Example
 
 ```typescript
-import TypedKoa from "typedkoa";
+import { Route } from "typedkoa";
 
 interface Student {
   classroomId: string;
@@ -41,23 +41,19 @@ interface QueryParams {}
 
 type ResBody = Student;
 
-// Koa request handler / middleware
-const createStudent: TypedKoa.Middleware<ResBody> = (ctx, next) => {
-  // request params, body and query are type inferred
-  const { params, body, query } = TypedKoa.request<
-    PathParams,
-    ReqBody,
-    QueryParams
-  >(ctx);
+// `Route` function accepts a handler function as an argument and returns a Koa middleware
+const createStudent = Route<PathParams, ResBody, ReqBody, QueryParams>(
+  async (req, res, ctx) => {
+    // Request `params`, `body` and `query` are type inferred
+    const { params, body, query } = req;
 
-  const student = new Student({
-    ...body,
-    classroomId: params.classroomId,
-  });
+    const student = new Student({
+      ...body,
+      classroomId: params.classroomId,
+    });
 
-  // response body will have type validation
-  ctx.body = student;
-
-  next();
-};
+    // response body is type checked
+    return student;
+  }
+);
 ```
