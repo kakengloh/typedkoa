@@ -1,6 +1,6 @@
 {
   "name": "typedkoa",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Koa route handler with great Typescript support",
   "main": "build/index.js",
   "types": "build/index.d.ts",
